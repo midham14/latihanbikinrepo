@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+    <center>
+        <div>
+            <i class="fab fa-amazon" style="font-size:100px"></i>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee6cdb0-5ef8-4915-ae94-28964f1a187c/dadxdrz-331e8670-c2f2-4684-bf60-6692f91871fe.png/v1/fill/w_1024,h_576,strp/one_punch_man_large_title_logo_png_by_thequeenotaku_dadxdrz-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NzYiLCJwYXRoIjoiXC9mXC9kZWU2Y2RiMC01ZWY4LTQ5MTUtYWU5NC0yODk2NGYxYTE4N2NcL2RhZHhkcnotMzMxZTg2NzAtYzJmMi00Njg0LWJmNjAtNjY5MmY5MTg3MWZlLnBuZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.StgxWF-tXjOLU0fSLXLFtwpQuNu_ixwjRjZiEp_Zf6Q" alt="" height="250px">
+
+            <h1>
+                <i>One Punch Man Hero Database</i>
+            </h1>
+
+            <button id="btn-changeTitleColor">
+                Change Title Color
+            </button>
+
+        </div>
+        <input type="text"  id="input-hero" placeholder="please input something">
+        <button id="btn-getValue">
+            get value
+        </button>
+
+        <div class="card">
+           <img src="https://lh3.googleusercontent.com/proxy/H237Y9PeCDnmEtgdCMVnYlPew-vddM0KpzTw_unraaiYWNJgxrm1VgPQw1bDcH88PHNeIYqflLyTfl8v7_GGqjJ4eBjOmPlH7mzhF-y1" alt="" height="150px">
+
+           <div class="heroesName">
+               Saitama
+           </div>
+
+           <div class="heroesDescription">
+            Saitama's only power is that his body is far beyond human limits, allowing him to achieve astounding physical feats. His strength is so great that it vastly eclipses even artificial beings designed or bred specifically for superhuman combat, such as mechanical beings or the mutated warriors from the House of Evolution.
+           </div>
+
+           <div class="heroesPower">
+            Current Hero Power 
+                <div id="power">
+                    <b>0</b>
+                </div>
+           </div>
+
+           <button id="btnPower">
+               Add Hero Power
+           </button>
+        </div>
+    </center>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+        // Id -> getElementById
+        // console.log(document.getElementById('btn-changeTitleColor'))
+        // Tags -> getElementsByTagName
+        // console.log(document.getElementsByTagName('img')[1])
+        // Class -> getElementsByClassName
+        // console.log(document.getElementsByClassName('card'))
+
+        let title = document.getElementsByTagName('h1')
+        // let card = document.getElementsByClassName('card')
+        // console.log(card)
+
+        
+        // innerHTML
+        console.log(title[0].innerHTML, 'innerHTML')
+        // innerText
+        console.log(title[0].innerText, 'innerText')
+
+        // title[0].innerText = 'Hacktiv8 Hero Database'
+
+        // title[0]['style']['color'] = 'red'
+        // title[0]['style']['font-size'] = '20px'
+        
+        // title[0]['id'] = 'h1-title'
+        // console.log(title[0])
+
+
+
+        // event listener
+
+        let btnChangeTitleColor = document.getElementById('btn-changeTitleColor')
+
+        btnChangeTitleColor.addEventListener('click', function(){
+            let title = document.getElementsByTagName('h1')
+            title[0]['style']['color'] = 'red'
+        })
+        
+        let input = document.getElementById('input-hero')
+        
+        console.log(input)
+
+        input.addEventListener('keydown', function(e){
+            // console.log(e.target.value)
+        })
+
+        // id="btn-getValue"
+
+        let getValue = document.getElementById('btn-getValue')
+
+        getValue.addEventListener('click', function(){
+            // console.log(input.value)
+        })
+
+
+
+        // parent element ->parentElement
+        // class="heroesName"
+        let heroesName = document.getElementsByClassName('heroesName')
+        // console.log(heroesName[0].parentElement)
+        // children element -> children
+        let card = document.getElementsByClassName('card')[0].children
+        // console.log(card)
+
+        // for(let i = 0; i<card.length;i++){
+        //     card[i]['style']['color'] = 'red'
+        // }
+
+        // document.getElementsByClassName('card')[0]['style']['background'] = 'black'
+        
+        //alert & prompt
+
+        // alert('Selamat anda mendapatkan 10jt')
+
+        // let name = prompt('Masuksan nama')
+        // console.log(name)
+
+
+        // id="btnPower"
+
+        let addPower = document.getElementById('btnPower')
+
+        // id="power"
+
+        addPower.addEventListener('click', function(){
+            // console.log('testing masuk add')
+            let inputPower = prompt('MASUKAN POWER')
+            let currentPower = document.getElementById('power')
+            let newPower = Number(currentPower.innerText) + Number(inputPower)
+            document.getElementById('power').innerHTML = `<b>${newPower}</b>`
+            console.log(currentPower)
+            addPower.disabled = true
+            console.log(addPower)
+ 
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
